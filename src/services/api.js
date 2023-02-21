@@ -11,11 +11,11 @@ export const api = axios.create({
   },
 });
 
-// api.interceptors.request.use(async (config) => {
-//   config.headers["user-agent"] = selectUserAgent();
+api.interceptors.request.use(async (config) => {
+  config.headers["user-agent"] = selectUserAgent();
 
-//   return config;
-// });
+  return config;
+});
 
 export const api2 = axios.create({
   baseURL: "https://kitsu.io",
