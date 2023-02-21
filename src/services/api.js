@@ -5,9 +5,6 @@ export const api = axios.create({
   baseURL: "https://appanimeplus.tk",
   headers: {
     "Content-type": "application/json",
-    "Access-Control-Allow-Headers": "*",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Origin": "*",
   },
 });
 
@@ -21,9 +18,6 @@ export const api2 = axios.create({
   baseURL: "https://kitsu.io",
   headers: {
     "Content-Type": "application/vnd.api+json",
-    "Access-Control-Allow-Headers": "*",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Origin": "*",
   },
 });
 
