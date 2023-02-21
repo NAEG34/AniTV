@@ -5,9 +5,9 @@ import GlobalStyle from "./global";
 function App() {
   return (
     <div>
+      <SRoutes />
       <GlobalStyle />
       <Navbar />
-      <SRoutes />
     </div>
   );
 }
