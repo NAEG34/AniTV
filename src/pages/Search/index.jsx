@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
+
 import * as S from "./styles";
+import * as G from "../../global/styles";
 
 function Search() {
   const [animesSearch, setAnimesSearch] = useState([]);
@@ -52,7 +54,7 @@ function Search() {
   }
 
   return (
-    <S.Container>
+    <G.Container>
       <S.SearchBox onSubmit={handleSubmit}>
         <input
           type="text"
@@ -66,25 +68,25 @@ function Search() {
           <h1>
             <span>{animesSearch.length}</span> RESULTADOS:
           </h1>
-          <S.Page>
+          <G.List>
             {animesSearch?.map((item, index) => (
-              <S.PageItem
-                key={`latest-${index}-${item.id}`}
-                onClick={() => goToAnimePage(item.vide_id)}
+              <G.ListItem
+                key={`result-${index}-${item.id}`}
+                onClick={() => goToAnimePage(item.id)}
               >
-                <S.PageCard
+                <G.SliderCardMid
                   bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
                 >
-                  <span>{item.title}</span>
-                </S.PageCard>
-              </S.PageItem>
+                  <G.SliderCardText>{item.category_name}</G.SliderCardText>
+                </G.SliderCardMid>
+              </G.ListItem>
             ))}
-          </S.Page>
+          </G.List>
         </S.Results>
       ) : (
         <h1>NADA POR AQUI...</h1>
       )}
-    </S.Container>
+    </G.Container>
   );
 }
 

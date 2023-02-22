@@ -1,23 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  padding: 30px 6% 0 6%;
-  color: white;
-`;
-
 export const AnimeData = styled.div`
   display: flex;
   width: 100%;
 `;
 
 export const AnimeImage = styled.div`
-  width: 180px;
+  width: 200px;
   img {
-    /* height: 100%; */
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 5px;
     filter: contrast(1.2) saturate(1.2);
   }
@@ -49,15 +42,17 @@ export const AFooter = styled.footer`
   }
 `;
 export const EpisodeContainer = styled.div`
+  /* border: 1px solid red; */
   user-select: none;
 
   #revert-icon-div {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   h1 {
+    line-height: 40px;
     font-size: 22px;
     width: 100%;
     text-align: center;
@@ -76,6 +71,7 @@ export const EpisodeContainer = styled.div`
     transform: rotate(180deg);
   }
 `;
+
 export const AnimeEpisodes = styled.div`
   width: 100%;
 `;

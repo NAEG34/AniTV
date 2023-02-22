@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import * as S from "./styles";
-import { api, api2 } from "../../services/api";
+import { api } from "../../services/api";
 import Carousel from "../../components/Carousel";
 import { useNavigate, useParams } from "react-router-dom";
 import { categorys } from "../Home";
+
+import * as G from "../../global/styles";
 
 function Category() {
   const navigate = useNavigate();
@@ -30,7 +31,6 @@ function Category() {
 
   useEffect(() => {
     async function filterByCategory() {
-      console.log(catStrg);
       if (!catStrg) return;
 
       try {
@@ -50,40 +50,40 @@ function Category() {
   }
 
   return (
-    <S.Container>
+    <G.Container>
       <h1>CATEGORIA / GÊNERO</h1>
-      <S.SliderContainer>
+      <G.SliderContainer>
         <Carousel>
           {categorys?.map((item, index) => (
-            <S.SliderItem
+            <G.SliderItem
               key={`category-${item}-${index}`}
               onClick={() => {
                 setCateg(item);
                 changeCategory(item);
               }}
             >
-              <S.SliderCard>
+              <G.SliderCardMini>
                 <span>{item}</span>
-              </S.SliderCard>
-            </S.SliderItem>
+              </G.SliderCardMini>
+            </G.SliderItem>
           ))}
         </Carousel>
-      </S.SliderContainer>
-      <S.Page>
+      </G.SliderContainer>
+      <G.List>
         {categoryFilter.map((item, index) => (
-          <S.PageItem
+          <G.ListItem
             key={`category-${index}-${item.id}`}
             onClick={() => goToAnimePage(item.id)}
           >
-            <S.PageCard
+            <G.SliderCardMid
               bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
             >
-              <span>{item.category_name}</span>
-            </S.PageCard>
-          </S.PageItem>
+              <G.SliderCardText>{item.category_name}</G.SliderCardText>
+            </G.SliderCardMid>
+          </G.ListItem>
         ))}
-      </S.Page>
-    </S.Container>
+      </G.List>
+    </G.Container>
   );
 }
 

@@ -4,6 +4,7 @@ import { api } from "../../services/api";
 import { useParams, useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
+import * as G from "../../global/styles";
 
 function Watch() {
   const { videoId } = useParams();
@@ -72,7 +73,7 @@ function Watch() {
   }, [videoId]);
 
   return (
-    <S.Container>
+    <G.Container>
       <S.Episode>
         {currentEpisode?.map((item) => (
           <S.VideoWrapper key={`episode-${item.videoId}-${item.category_id}`}>
@@ -104,7 +105,7 @@ function Watch() {
           </S.VideoWrapper>
         ))}
       </S.Episode>
-    </S.Container>
+    </G.Container>
   );
 }
 

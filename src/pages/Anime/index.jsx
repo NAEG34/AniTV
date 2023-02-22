@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
+
 import * as S from "./styles";
+import * as G from "../../global/styles";
 
 function Anime() {
   const { id } = useParams();
@@ -41,7 +43,7 @@ function Anime() {
   }
 
   return (
-    <S.Container>
+    <G.Container>
       {info?.map((item) => (
         <S.AnimeData key={item.id}>
           <S.AnimeImage>
@@ -84,6 +86,7 @@ function Anime() {
             <path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z" />
           </svg>
         </div>
+
         <S.AnimeEpisodes>
           {episodes?.map((item, index) => (
             <S.Episode
@@ -96,7 +99,7 @@ function Anime() {
           ))}
         </S.AnimeEpisodes>
       </S.EpisodeContainer>
-    </S.Container>
+    </G.Container>
   );
 }
 

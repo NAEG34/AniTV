@@ -1,65 +1,73 @@
 import * as S from "./styles";
 import logoImg from "../../assets/anim-pj.png";
-import { redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
-  const [navbar, setNavbar] = useState(false);
-  const currentPath = window.location.pathname;
+  const [miniBar, setMiniBar] = useState(null);
 
-  const getStyle = (path) => ({
-    color: currentPath === path ? "#fe1e54" : "#a8a8a8",
-  });
-
-  // useEffect(() => {
-  //   const changeNavbar = () => {
-  //     if (window.scrollY >= 66) {
-  //       setNavbar(true);
-  //       console.log("atv");
-  //     } else {
-  //       setNavbar(false);
-  //       console.log("desatv");
-  //     }
-  //   };
-  //   window.addEventListener("scroll", changeNavbar);
-  // }, [navbar]);
   return (
     <S.Header>
-      <S.Container
-      // className={navbar ? "navbar-active" : "navbar"}
-      >
-        <a href="/">
+      <S.Container>
+        <NavLink to="/">
           <img src={logoImg} alt="Logo" />
-        </a>
-        <ul>
+        </NavLink>
+        <ul className="navbar-links">
           <li>
-            <a href="/" className="active">
-              Início
-            </a>
+            <NavLink to="/">Início</NavLink>
           </li>
           <li>
-            <a href="/lancamentos">Lançamentos</a>
+            <NavLink to="/lancamentos">Lançamentos</NavLink>
           </li>
           <li>
-            <a href="/categoria/none">Categoria</a>
+            <NavLink to="/categoria/none">Categoria</NavLink>
           </li>
         </ul>
-
-        <a
-          href="/pesquisa"
-          className={
-            currentPath === "/pesquisa" ? "searchBtn-active" : "searchBtn"
-          }
+        <div
+          className="topBar"
+          onClick={() => {
+            !miniBar ? setMiniBar("active") : setMiniBar(null);
+            console.log(miniBar);
+          }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="48"
-            width="48"
-            viewBox="0 0 48 48"
-          >
-            <path d="M39.75 43.35 26.3 29.95q-1.45 1.15-3.425 1.8-1.975.65-4.275.65-5.75 0-9.75-4t-4-9.65q0-5.65 4-9.65t9.7-4q5.65 0 9.625 4 3.975 4 3.975 9.65 0 2.25-.625 4.175-.625 1.925-1.875 3.625l13.5 13.4ZM18.55 27.7q3.75 0 6.325-2.625t2.575-6.325q0-3.75-2.575-6.35Q22.3 9.8 18.55 9.8t-6.375 2.6Q9.55 15 9.55 18.75q0 3.7 2.625 6.325T18.55 27.7Z" />
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <ul
+          className={!miniBar ? "miniMenu" : "miniMenu active"}
+          onClick={() => setMiniBar(null)}
+        >
+          <li>
+            <NavLink to="/">Início</NavLink>
+          </li>
+          <li>
+            <NavLink to="/lancamentos">Lançamentos</NavLink>
+          </li>
+          <li>
+            <NavLink to="/categoria/none">Categoria</NavLink>
+          </li>
+          <li>
+            <NavLink to="/pesquisa">Pesquisar</NavLink>
+          </li>
+        </ul>
+        <NavLink to="/pesquisa" className="search-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11ZM11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C13.125 20 15.078 19.2635 16.6177 18.0319L20.2929 21.7071C20.6834 22.0976 21.3166 22.0976 21.7071 21.7071C22.0976 21.3166 22.0976 20.6834 21.7071 20.2929L18.0319 16.6177C19.2635 15.078 20 13.125 20 11C20 6.02944 15.9706 2 11 2Z"
+              ></path>
+            </g>
           </svg>
-        </a>
+        </NavLink>
       </S.Container>
     </S.Header>
   );

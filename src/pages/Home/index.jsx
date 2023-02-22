@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
 import * as S from "./styles";
+import * as G from "../../global/styles";
+
+import { useEffect, useState } from "react";
 import { api, api2 } from "../../services/api";
 import Carousel from "../../components/Carousel";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Home() {
   // const [loading, setLoading] = useState(true);
@@ -65,7 +67,7 @@ function Home() {
     navigate(`/categoria/${catStrg}`);
   }
   return (
-    <S.Container>
+    <G.Container>
       <S.Latest>
         <h1>LANÇAMENTOS</h1>
         <S.LatestContent>
@@ -109,44 +111,44 @@ function Home() {
         </S.LatestContent>
 
         <S.SeeMore>
-          <a href="/lancamentos">
+          <NavLink to="/lancamentos">
             Ver <span>+</span>
-          </a>
+          </NavLink>
         </S.SeeMore>
       </S.Latest>
       <h1>CATEGORIA / GÊNERO</h1>
-      <S.SliderContainer>
+      <G.SliderContainer>
         <Carousel>
           {categorys?.map((item, index) => (
-            <S.SliderItem
+            <G.SliderItem
               key={`category-${item}-${index}`}
               onClick={() => filterByCateg(item)}
             >
-              <S.SliderCardCat>
+              <G.SliderCardMini>
                 <span>{item}</span>
-              </S.SliderCardCat>
-            </S.SliderItem>
+              </G.SliderCardMini>
+            </G.SliderItem>
           ))}
         </Carousel>
-      </S.SliderContainer>
+      </G.SliderContainer>
       <h1>POPULARES</h1>
-      <S.SliderContainer>
+      <G.SliderContainer>
         <Carousel>
           {popular?.map((item, index) => (
-            <S.SliderItem
+            <G.SliderItem
               key={`category-${item.id}-${index}`}
               onClick={() => goToAnimePage(item.id)}
             >
-              <S.SliderCardPop
+              <G.SliderCardLong
                 bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
               >
-                <span>{item.category_name}</span>
-              </S.SliderCardPop>
-            </S.SliderItem>
+                <G.SliderCardText>{item.category_name}</G.SliderCardText>
+              </G.SliderCardLong>
+            </G.SliderItem>
           ))}
         </Carousel>
-      </S.SliderContainer>
-    </S.Container>
+      </G.SliderContainer>
+    </G.Container>
   );
 }
 export const categorys = [

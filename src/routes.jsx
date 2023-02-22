@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import Navbar from "./pages/General/Nav";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Watch from "./pages/Watch";
@@ -8,9 +9,10 @@ import Category from "./pages/Category";
 import Latest from "./pages/Latest";
 import Anime from "./pages/Anime";
 
-function SRoutes() {
+function Router() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/lancamentos" element={<Latest />}></Route>
@@ -28,4 +30,4 @@ function SRoutes() {
   );
 }
 
-export default SRoutes;
+export default Router;
