@@ -17,8 +17,8 @@ function Category() {
     navigate(`/categoria/${filter(str)}`);
   }
 
-  function filter(str) {
-    const data = str
+  function filter(value) {
+    const data = value
       ?.toLowerCase()
       ?.replace("ó", "o")
       ?.replace("é", "e")

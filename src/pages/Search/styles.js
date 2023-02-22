@@ -23,6 +23,7 @@ export const SearchBox = styled.form`
     background-color: #fe4848;
     color: white;
     width: 12%;
+    cursor: pointer;
   }
   .searchBtn-image {
     display: none;

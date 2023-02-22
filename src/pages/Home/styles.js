@@ -91,7 +91,6 @@ export const LatestItemContainer = styled.div`
     width: 100%;
     display: flex;
     margin-bottom: 15px;
-    justify-content: space-between;
   }
 
   @media screen and (max-width: 600px) {
@@ -116,7 +115,7 @@ export const LatestItemContainer = styled.div`
 
 export const LatestItem = styled.div`
   cursor: pointer;
-  display: block;
+  display: flex;
   align-items: flex-end;
   justify-content: center;
   text-align: center;

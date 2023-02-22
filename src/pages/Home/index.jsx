@@ -64,8 +64,21 @@ function Home() {
     navigate(`/anime/${id}/episode/${videoId}`);
   }
   function filterByCateg(catStrg) {
-    navigate(`/categoria/${catStrg}`);
+    navigate(`/categoria/${filter(catStrg)}`);
   }
+
+  function filter(value) {
+    const data = value
+      ?.toLowerCase()
+      ?.replace("ó", "o")
+      ?.replace("é", "e")
+      ?.replace("ã", "a")
+      ?.replace("ç", "c")
+      ?.replaceAll(" ", "_");
+
+    return data;
+  }
+
   return (
     <G.Container>
       <S.Latest>

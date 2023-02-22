@@ -8,9 +8,17 @@ export const AnimeData = styled.div`
     flex-direction: column;
     align-items: center;
 
-    & > div {
-      margin-top: 20px;
+    div {
+      margin-top: 15px;
       text-align: center;
+    }
+    div h1 {
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+    div div,
+    p {
+      font-size: 15px;
     }
   }
 `;
@@ -38,6 +46,7 @@ export const AnimeInfo = styled.div`
   }
   div {
     padding: 10px 0;
+    text-align: justify;
   }
 `;
 
@@ -52,7 +61,6 @@ export const AFooter = styled.footer`
   }
 `;
 export const EpisodeContainer = styled.div`
-  /* border: 1px solid red; */
   user-select: none;
 
   #revert-icon-div {
@@ -84,6 +92,18 @@ export const EpisodeContainer = styled.div`
 
 export const AnimeEpisodes = styled.div`
   width: 100%;
+
+  @media screen and (max-width: 600px) {
+    div {
+      display: flex;
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 20px;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+    }
+  }
 `;
 
 export const Episode = styled.div`

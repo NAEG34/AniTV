@@ -16,14 +16,14 @@ function Search() {
     e.preventDefault();
 
     if (!searchValueRef.current.value.trim()) {
+      alert("Campo de busca vazio");
       return;
     }
     setSearch(searchValueRef.current.value);
   }
 
   useEffect(() => {
-    if (!searchValueRef) return;
-
+    if (!search) return;
     async function searchAnimes() {
       try {
         const query = search?.replace("?", "")?.replace(/[^a-zA-Zs]/g, "_");
@@ -36,8 +36,8 @@ function Search() {
           }
 
           if (data === null) {
+            alert("Nenhum anime encontrado");
             setAnimesSearch([]);
-            // alert("Nenhum resultado encontrado...");
           }
         } else {
           setAnimesSearch([]);
@@ -61,7 +61,7 @@ function Search() {
           placeholder="Buscar animes..."
           ref={searchValueRef}
         />
-        <button type="submit">
+        <button type="submit" onClick={handleSubmit}>
           <span>Buscar</span>
           <svg
             className="searchBtn-image"
