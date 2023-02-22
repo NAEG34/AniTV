@@ -32,6 +32,10 @@ export const SliderContainer = styled.div`
 export const SliderItem = styled.li`
   margin-right: 20px;
   max-width: 100%;
+
+  @media screen and (max-width: 600px) {
+    margin-right: 10px;
+  }
 `;
 
 // ------------------MINI----------------------------
@@ -60,6 +64,13 @@ export const SliderCardMini = styled.div`
     transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
       opacity 0.2s linear, background 0.2s linear, color 0.2s linear;
     filter: brightness(0.8);
+  }
+
+  @media screen and (max-width: 600px) {
+    & {
+      width: 150px;
+      height: 80px;
+    }
   }
 `;
 
@@ -92,6 +103,12 @@ export const SliderCardMid = styled.div`
     background: rgba(0, 0, 0, 0.3);
     opacity: 1;
   }
+  @media screen and (max-width: 600px) {
+    & {
+      width: 150px;
+      height: 80px;
+    }
+  }
 `;
 
 // ---------------------------LONG--------------------------
@@ -122,6 +139,12 @@ export const SliderCardLong = styled.div`
       opacity 0.2s linear, background 0.2s linear, color 0.2s linear;
     background: rgba(0, 0, 0, 0.3);
     opacity: 1;
+  }
+  @media screen and (max-width: 600px) {
+    & {
+      width: 150px;
+      height: 250px;
+    }
   }
 `;
 

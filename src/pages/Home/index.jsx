@@ -72,7 +72,6 @@ function Home() {
         <h1>LANÇAMENTOS</h1>
         <S.LatestContent>
           <S.LatestMain
-            className="teste"
             bgURL={`${mainCard}`}
             onClick={() =>
               handleClickEpisode(latest[0]?.category_id, latest[0]?.video_id)

@@ -2,7 +2,11 @@ import styled from "styled-components";
 import defaultImg from "../../assets/default.jfif";
 
 export const Latest = styled.section`
-  width: 100%;
+  @media screen and (max-width: 600px) {
+    & {
+      margin-bottom: 50px;
+    }
+  }
 `;
 
 export const SeeMore = styled.div`
@@ -27,6 +31,19 @@ export const LatestContent = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
+
+  @media screen and (max-width: 600px) {
+    & {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    & > div {
+      height: 200px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const LatestMain = styled.div`
@@ -64,32 +81,50 @@ export const LatestMain = styled.div`
     opacity: 1;
   }
 `;
-
+export const Wrap = styled.div``;
 export const LatestItemContainer = styled.div`
   width: 50%;
-  display: flex;
+  height: 400px;
+  display: block;
 
   .wrap {
-    width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    margin: 0 10px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 600px) {
+    & {
+      width: 100%;
+      height: 200px;
+    }
+    .wrap {
+      height: 50%;
+      margin-bottom: 10px;
+    }
+
+    .wrap div {
+      margin: 0;
+      height: 95px;
+    }
+    .wrap div + div {
+      margin-left: 10px;
+    }
   }
 `;
 
 export const LatestItem = styled.div`
   cursor: pointer;
-  display: flex;
+  display: block;
   align-items: flex-end;
   justify-content: center;
   text-align: center;
   box-shadow: 5px 5px 20px black;
-
-  width: 100%;
-  height: 190px;
-  margin: 10px;
+  width: 50%;
+  margin-left: 15px;
+  height: 192px;
   border-radius: 10px;
-
   background: ${(props) =>
     props.bgURL ? `url(${props.bgURL})` : `url(${defaultImg})`};
   background-color: rgba(0, 0, 0, 0.2);

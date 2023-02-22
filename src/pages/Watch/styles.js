@@ -34,4 +34,14 @@ export const VideoWrapper = styled.div`
     width: 60px;
     background-color: #fe4848;
   }
+
+  @media screen and (max-width: 600px) {
+    div {
+      flex-direction: column;
+    }
+    div > svg,
+    video {
+      margin: 20px 0;
+    }
+  }
 `;

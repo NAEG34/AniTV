@@ -24,6 +24,25 @@ export const SearchBox = styled.form`
     color: white;
     width: 12%;
   }
+  .searchBtn-image {
+    display: none;
+  }
+  @media screen and (max-width: 600px) {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button span {
+      display: none;
+    }
+    .searchBtn-image {
+      display: block;
+      fill: white;
+      /* width: 30px; */
+      height: 30px;
+    }
+  }
 `;
 
 export const Results = styled.div`
@@ -32,5 +51,12 @@ export const Results = styled.div`
   }
   span {
     font-weight: 900;
+  }
+
+  @media screen and (max-width: 600px) {
+    div > div {
+      max-width: 23.7vw;
+      min-height: 140px;
+    }
   }
 `;

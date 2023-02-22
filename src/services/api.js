@@ -8,17 +8,17 @@ export const api = axios.create({
   },
 });
 
-api.interceptors.request.use(async (config) => {
-  config.headers["user-agent"] = selectUserAgent();
-
-  return config;
-});
-
 export const api2 = axios.create({
   baseURL: "https://kitsu.io",
   headers: {
     "Content-Type": "application/vnd.api+json",
   },
+});
+
+api.interceptors.request.use(async (config) => {
+  config.headers["user-agent"] = selectUserAgent();
+
+  return config;
 });
 
 api2.interceptors.request.use(async (config) => {

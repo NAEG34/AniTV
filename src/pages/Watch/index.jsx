@@ -15,12 +15,14 @@ function Watch() {
   const [nextEpisode, setNextEpisode] = useState([]);
 
   function goNextEpisode() {
+    if (!nextEpisode) return;
     navigate(
       `/anime/${nextEpisode[0]?.category_id}/episode/${nextEpisode[0]?.video_id}`
     );
   }
 
   function goPrevEpisode() {
+    if (!prevEpisode) return;
     navigate(
       `/anime/${prevEpisode[0].category_id}/episode/${prevEpisode[0].video_id}`
     );

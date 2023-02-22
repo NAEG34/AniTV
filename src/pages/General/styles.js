@@ -77,9 +77,9 @@ export const Container = styled.div`
     width: 100%;
     padding: 100px 0;
     left: 0;
-    top: 100%;
+    right: 0;
     height: 100%;
-    /* height: calc(80% - 100px); */
+    /* height: calc(100% - 100px); */
     /* background: rgba(2, 2, 2, 0.93); */
     background: linear-gradient(
       180deg,
@@ -123,8 +123,7 @@ export const Container = styled.div`
     }
 
     .topBar {
-      position: fixed;
-      left: 85%;
+      margin-left: auto;
       display: block;
     }
     .search-btn {
