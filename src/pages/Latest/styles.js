@@ -16,10 +16,16 @@ export const Page = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 600px) {
+    div div {
+      width: 135px;
+      height: 175px;
+    }
+  }
 `;
 
 export const PageItem = styled.div`
-  /* margin: 20px 0 0 20px; */
   max-width: 100%;
 `;
 export const PageCard = styled.div`

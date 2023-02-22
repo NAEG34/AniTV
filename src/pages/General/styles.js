@@ -78,9 +78,8 @@ export const Container = styled.div`
     padding: 100px 0;
     left: 0;
     right: 0;
+    top: 100%;
     height: 100%;
-    /* height: calc(100% - 100px); */
-    /* background: rgba(2, 2, 2, 0.93); */
     background: linear-gradient(
       180deg,
       rgba(15, 15, 19, 0.9) 100%,
@@ -95,6 +94,7 @@ export const Container = styled.div`
   }
 
   .miniMenu li {
+    cursor: pointer;
     text-align: center;
     line-height: 10vh;
   }
@@ -103,7 +103,7 @@ export const Container = styled.div`
     background-color: #fe4848;
   }
 
-  .miniMenu li a {
+  .miniMenu a {
     color: white;
     font-size: 20px;
     text-transform: uppercase;

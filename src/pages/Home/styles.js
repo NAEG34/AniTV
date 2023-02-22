@@ -33,15 +33,19 @@ export const LatestContent = styled.div`
   margin-top: 10px;
 
   @media screen and (max-width: 600px) {
-    & {
-      display: block;
-      margin-bottom: 20px;
-    }
+    display: block;
+    margin-bottom: 20px;
 
-    & > div {
+    div {
       height: 200px;
       width: 100%;
       margin-bottom: 10px;
+    }
+    div span {
+      font-size: 25px;
+    }
+    .wrap span {
+      font-size: 10px;
     }
   }
 `;
@@ -81,7 +85,7 @@ export const LatestMain = styled.div`
     opacity: 1;
   }
 `;
-export const Wrap = styled.div``;
+
 export const LatestItemContainer = styled.div`
   width: 50%;
   height: 400px;

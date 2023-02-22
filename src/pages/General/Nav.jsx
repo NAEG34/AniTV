@@ -39,16 +39,24 @@ function Navbar() {
           onClick={() => setMiniBar(null)}
         >
           <li>
-            <NavLink to="/">Início</NavLink>
+            <NavLink to="/">
+              <li>Início</li>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/lancamentos">Lançamentos</NavLink>
+            <NavLink to="/lancamentos">
+              <li>Lançamentos</li>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/categoria/none">Categoria</NavLink>
+            <NavLink to="/categoria/none">
+              <li>Categoria</li>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/pesquisa">Pesquisar</NavLink>
+            <NavLink to="/pesquisa">
+              <li>Pesquisar</li>
+            </NavLink>
           </li>
         </ul>
         <NavLink to="/pesquisa" className="search-btn">
