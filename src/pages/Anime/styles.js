@@ -61,8 +61,6 @@ export const AFooter = styled.footer`
   }
 `;
 export const EpisodeContainer = styled.div`
-  user-select: none;
-
   #revert-icon-div {
     display: flex;
     align-items: center;

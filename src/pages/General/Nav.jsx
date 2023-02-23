@@ -27,7 +27,6 @@ function Navbar() {
           className="topBar"
           onClick={() => {
             !miniBar ? setMiniBar("active") : setMiniBar(null);
-            console.log(miniBar);
           }}
         >
           <div className="bar"></div>
@@ -38,26 +37,21 @@ function Navbar() {
           className={!miniBar ? "miniMenu" : "miniMenu active"}
           onClick={() => setMiniBar(null)}
         >
-          <li>
-            <NavLink to="/">
-              <li>Início</li>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/lancamentos">
-              <li>Lançamentos</li>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/categoria/none">
-              <li>Categoria</li>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/pesquisa">
-              <li>Pesquisar</li>
-            </NavLink>
-          </li>
+          <NavLink to="/">
+            <li>Início</li>
+          </NavLink>
+
+          <NavLink to="/lancamentos">
+            <li>Lançamentos</li>
+          </NavLink>
+
+          <NavLink to="/categoria/none">
+            <li>Categoria</li>
+          </NavLink>
+
+          <NavLink to="/pesquisa">
+            <li>Pesquisar</li>
+          </NavLink>
         </ul>
         <NavLink to="/pesquisa" className="search-btn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

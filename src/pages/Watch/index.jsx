@@ -15,14 +15,15 @@ function Watch() {
   const [nextEpisode, setNextEpisode] = useState([]);
 
   function goNextEpisode() {
-    if (!nextEpisode) return;
+    if (!nextEpisode || nextEpisode.length == 0) return;
+
     navigate(
-      `/anime/${nextEpisode[0]?.category_id}/episode/${nextEpisode[0]?.video_id}`
+      `/anime/${nextEpisode[0].category_id}/episode/${nextEpisode[0]?.video_id}`
     );
   }
 
   function goPrevEpisode() {
-    if (!prevEpisode) return;
+    if (!prevEpisode || prevEpisode.length == 0) return;
     navigate(
       `/anime/${prevEpisode[0].category_id}/episode/${prevEpisode[0].video_id}`
     );
@@ -39,7 +40,7 @@ function Watch() {
 
         setNextEpisode(data);
       } catch (error) {
-        console.log("Couldn't find the prev episode", error);
+        console.log("Couldn't find the next episode", error);
       }
     }
     async function getPrevEpisode(catId) {
@@ -91,7 +92,7 @@ function Watch() {
                 <path d="M449 839 185 575l264-264 66 66-199 198 199 198-66 66Zm262 0L447 575l264-264 66 66-198 198 198 198-66 66Z" />
               </svg>
               <video
-                src={item.locationhd || item.locationsd || item.locationsd}
+                src={item.locationhd || item.locationsd || item.location}
                 controls
               />
               <svg

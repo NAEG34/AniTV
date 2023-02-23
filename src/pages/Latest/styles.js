@@ -21,6 +21,10 @@ export const Page = styled.div`
     div div {
       width: 135px;
       height: 175px;
+
+      span {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -44,24 +48,14 @@ export const PageCard = styled.div`
   background-size: cover;
   background-position: center;
 
-  &:hover {
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
-      opacity 0.2s linear, background 0.2s linear, color 0.2s linear;
-    background-blend-mode: darken;
-  }
-  &:hover > span {
-    /* transform: translateY(0); */
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 1;
-  }
   span {
-    height: 70%;
+    height: 100%;
     text-align: center;
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    line-height: 100%;
     padding: 10px;
     opacity: 0;
     font-size: 18px;
