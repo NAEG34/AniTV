@@ -40,24 +40,22 @@ export const SearchBox = styled.form`
     .searchBtn-image {
       display: block;
       fill: white;
-      /* width: 30px; */
       height: 30px;
     }
   }
 `;
 
 export const Results = styled.div`
+  width: 100%;
+  margin: 20px 0 30px 0px;
   h1 {
     margin: 15px 0;
   }
   span {
     font-weight: 900;
   }
+`;
 
-  @media screen and (max-width: 600px) {
-    div > div {
-      max-width: 23.7vw;
-      min-height: 140px;
-    }
-  }
+export const NoResult = styled.div`
+  height: 800px;
 `;

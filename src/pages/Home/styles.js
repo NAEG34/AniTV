@@ -94,7 +94,7 @@ export const LatestItemContainer = styled.div`
   .wrap {
     width: 100%;
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: 600px) {
@@ -109,10 +109,10 @@ export const LatestItemContainer = styled.div`
 
     .wrap div {
       margin: 0;
-      height: 95px;
+      height: 100px;
     }
     .wrap div + div {
-      margin-left: 10px;
+      margin-left: 5px;
     }
   }
 `;
@@ -125,8 +125,8 @@ export const LatestItem = styled.div`
   text-align: center;
   box-shadow: 5px 5px 20px black;
   width: 50%;
-  margin-left: 15px;
-  height: 192px;
+  margin-left: 10px;
+  height: 195px;
   border-radius: 10px;
   background: ${(props) =>
     props.bgURL ? `url(${props.bgURL})` : `url(${defaultImg})`};

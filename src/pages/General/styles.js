@@ -1,14 +1,62 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-  padding: 0 6%;
-  width: 100%;
-  background: linear-gradient(
+export const color = {
+  noScroll: `linear-gradient(
     180deg,
     rgba(15, 15, 19, 1) 10%,
     rgba(9, 9, 121, 0) 80%,
     rgba(29, 29, 37, 0) 100%
-  );
+  )`,
+  scroll: "#1a1a1a",
+};
+
+export const Header = styled.header`
+  user-select: none;
+  position: fixed;
+  z-index: 999;
+  padding: 0 6%;
+  width: 100%;
+`;
+
+export const Footer = styled.footer`
+  padding: 0 6%;
+  width: 100%;
+  background-color: #1a1a1a;
+  bottom: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    color: #fe4848;
+
+    h2 {
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+    svg {
+      width: 15px;
+      margin-right: 5px;
+    }
+  }
+  span {
+    color: #fe4848;
+  }
+  h4 {
+    font-weight: 500;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 `;
 
 export const Container = styled.div`

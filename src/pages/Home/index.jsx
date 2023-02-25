@@ -151,11 +151,11 @@ function Home() {
               key={`category-${item.id}-${index}`}
               onClick={() => goToAnimePage(item.id)}
             >
-              <G.SliderCardLong
+              <G.SliderCard
                 bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
               >
                 <G.SliderCardText>{item.category_name}</G.SliderCardText>
-              </G.SliderCardLong>
+              </G.SliderCard>
             </G.SliderItem>
           ))}
         </Carousel>

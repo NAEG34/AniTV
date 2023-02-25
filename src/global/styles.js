@@ -1,36 +1,39 @@
 import styled from "styled-components";
+import defaultImg from "../assets/default.jfif";
 
 export const Container = styled.div`
   user-select: none;
   padding: 30px 6% 30px 6%;
   width: 100%;
   color: white;
+  padding-top: 120px;
 
   h1 {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 10px;
+    text-transform: uppercase;
   }
 `;
 
 export const List = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, max-content));
+  grid-gap: 10px;
+  justify-content: center;
+  padding: initial;
 `;
 
-export const ListItem = styled.div`
-  margin: 0 20px 20px 0;
-  max-width: 100%;
-`;
+export const ListItem = styled.div``;
 
 export const SliderContainer = styled.div`
   width: 100%;
-  margin: 20px 0 40px 0px;
+  margin: 20px 0 30px 0px;
 `;
 
 export const SliderItem = styled.li`
-  margin-right: 20px;
+  margin-right: 10px;
   max-width: 100%;
 
   @media screen and (max-width: 600px) {
@@ -38,7 +41,6 @@ export const SliderItem = styled.li`
   }
 `;
 
-// ------------------MINI----------------------------
 export const SliderCardMini = styled.div`
   width: 180px;
   height: 125px;
@@ -74,11 +76,10 @@ export const SliderCardMini = styled.div`
   }
 `;
 
-// ---------------------------MID --------------------------
-
-export const SliderCardMid = styled.div`
-  width: 180px;
-  height: 220px;
+export const SliderCard = styled.div`
+  max-width: 200px;
+  width: 140px;
+  height: 280px;
   cursor: pointer;
   transition: all 0.2s ease-out;
   position: relative;
@@ -106,44 +107,7 @@ export const SliderCardMid = styled.div`
   @media screen and (max-width: 600px) {
     & {
       width: 150px;
-      height: 80px;
-    }
-  }
-`;
-
-// ---------------------------LONG--------------------------
-
-export const SliderCardLong = styled.div`
-  width: 180px;
-  height: 325px;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 1px 1px 5px black;
-  background: ${(props) =>
-    props.bgURL ? `url(${props.bgURL})` : `url(${defaultImg})`};
-  background-color: rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  background-position: center;
-
-  &:hover {
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
-      opacity 0.2s linear, background 0.2s linear, color 0.2s linear;
-    background-blend-mode: darken;
-  }
-
-  &:hover > span {
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
-      opacity 0.2s linear, background 0.2s linear, color 0.2s linear;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 1;
-  }
-  @media screen and (max-width: 600px) {
-    & {
-      width: 150px;
-      height: 250px;
+      height: 120px;
     }
   }
 `;

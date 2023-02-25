@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
-import * as S from "./styles";
-
+import * as G from "../../global/styles";
 function Latest() {
   const navigate = useNavigate();
   const [latest, setLatest] = useState([]);
@@ -24,23 +23,27 @@ function Latest() {
   }
 
   return (
-    <S.Container>
+    <G.Container>
       <h1>Últimos Episódios</h1>
-      <S.Page>
-        {latest?.map((item, index) => (
-          <S.PageItem
-            key={`latest-${index}-${item.id}`}
-            onClick={() => handleClickEpisode(item.category_id, item.video_id)}
-          >
-            <S.PageCard
-              bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
+      <G.SliderContainer>
+        <G.List>
+          {latest?.map((item, index) => (
+            <G.ListItem
+              key={`latest-${index}-${item.id}`}
+              onClick={() =>
+                handleClickEpisode(item.category_id, item.video_id)
+              }
             >
-              <span>{item.title}</span>
-            </S.PageCard>
-          </S.PageItem>
-        ))}
-      </S.Page>
-    </S.Container>
+              <G.SliderCard
+                bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
+              >
+                <G.SliderCardText>{item.title}</G.SliderCardText>
+              </G.SliderCard>
+            </G.ListItem>
+          ))}
+        </G.List>
+      </G.SliderContainer>
+    </G.Container>
   );
 }
 

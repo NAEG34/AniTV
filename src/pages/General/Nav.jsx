@@ -1,13 +1,28 @@
 import * as S from "./styles";
 import logoImg from "../../assets/anim-pj.png";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const [miniBar, setMiniBar] = useState(null);
+  const [navColor, setNavColor] = useState(`${S.color.noScroll}`);
+
+  const listenScrollEvent = () => {
+    window.scrollY > 10
+      ? setNavColor(`${S.color.scroll}`)
+      : setNavColor(`${S.color.noScroll}`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent);
+    };
+  }, []);
 
   return (
-    <S.Header>
+    <S.Header style={{ background: navColor, transition: "all 0.2s" }}>
       <S.Container>
         <NavLink to="/">
           <img src={logoImg} alt="Logo" />
@@ -20,7 +35,10 @@ function Navbar() {
             <NavLink to="/lancamentos">Lançamentos</NavLink>
           </li>
           <li>
-            <NavLink to="/categoria/none">Categoria</NavLink>
+            <NavLink to="/categoria/acao">Categoria</NavLink>
+          </li>
+          <li>
+            <NavLink to="/letra/a">Alfabético</NavLink>
           </li>
         </ul>
         <div
@@ -45,8 +63,11 @@ function Navbar() {
             <li>Lançamentos</li>
           </NavLink>
 
-          <NavLink to="/categoria/none">
+          <NavLink to="/categoria/acao">
             <li>Categoria</li>
+          </NavLink>
+          <NavLink to="/letra/a">
+            <li>Alfabético</li>
           </NavLink>
 
           <NavLink to="/pesquisa">

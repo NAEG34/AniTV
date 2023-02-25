@@ -35,7 +35,7 @@ function Category() {
 
       try {
         const { data } = await api.get(
-          `/play-api.php?categoria${filter(catStrg)}`
+          `/play-api.php?categoria=${filter(catStrg)}`
         );
         setCategoryFilter(data.slice(0, 100));
       } catch (error) {
@@ -71,16 +71,13 @@ function Category() {
       </G.SliderContainer>
       <G.List>
         {categoryFilter.map((item, index) => (
-          <G.ListItem
+          <G.SliderCard
             key={`category-${index}-${item.id}`}
             onClick={() => goToAnimePage(item.id)}
+            bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
           >
-            <G.SliderCardMid
-              bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
-            >
-              <G.SliderCardText>{item.category_name}</G.SliderCardText>
-            </G.SliderCardMid>
-          </G.ListItem>
+            <G.SliderCardText>{item.category_name}</G.SliderCardText>
+          </G.SliderCard>
         ))}
       </G.List>
     </G.Container>

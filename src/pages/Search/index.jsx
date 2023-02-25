@@ -95,17 +95,19 @@ function Search() {
                 key={`result-${index}-${item.id}`}
                 onClick={() => goToAnimePage(item.id)}
               >
-                <G.SliderCardMid
+                <G.SliderCard
                   bgURL={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
                 >
                   <G.SliderCardText>{item.category_name}</G.SliderCardText>
-                </G.SliderCardMid>
+                </G.SliderCard>
               </G.ListItem>
             ))}
           </G.List>
         </S.Results>
       ) : (
-        <h1>NADA POR AQUI...</h1>
+        <S.NoResult>
+          <h1>NADA POR AQUI...</h1>
+        </S.NoResult>
       )}
     </G.Container>
   );

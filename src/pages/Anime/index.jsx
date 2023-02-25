@@ -49,7 +49,7 @@ function Anime() {
           <S.AnimeImage>
             <img
               src={`https://cdn.appanimeplus.tk/img/${item.category_image}`}
-              alt={item.category_image}
+              alt="NO IMAGE"
             />
           </S.AnimeImage>
           <S.AnimeInfo>

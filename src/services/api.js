@@ -15,14 +15,14 @@ export const api2 = axios.create({
   },
 });
 
-api.interceptors.request.use(async (config) => {
-  config.headers["user-agent"] = selectUserAgent();
+// api.interceptors.request.use(async (config) => {
+//   config.headers["user-agent"] = selectUserAgent();
 
-  return config;
-});
+//   return config;
+// });
 
-api2.interceptors.request.use(async (config) => {
-  config.headers["user-agent"] = selectUserAgent();
+// api2.interceptors.request.use(async (config) => {
+//   config.headers["user-agent"] = selectUserAgent();
 
-  return config;
-});
+//   return config;
+// });
